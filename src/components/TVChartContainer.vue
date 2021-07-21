@@ -172,11 +172,6 @@ export default {
         },
     },
     watch: {
-        searchValue(value) {
-            if (value === '') {
-                this.showSearchChild = false;
-            }
-        },
         baseCurrency() {
             this.getCoinInfo();
         }
