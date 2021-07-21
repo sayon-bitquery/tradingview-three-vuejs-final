@@ -1,8 +1,5 @@
 <template>
     <div>
-        <div v-if="addressInfo.hasOwnProperty('name')">
-            <p>Name: <strong>{{ addressInfo.name }}</strong> | Symbol: <strong>{{ addressInfo.symbol }}/BNB</strong></p>
-        </div>
         <div class="TVChartContainer" id="tv_chart_container"/>
     </div>
 </template>
@@ -141,11 +138,6 @@ export default {
 
         },
     },
-    watch: {
-        baseCurrency() {
-            this.getCoinInfo();
-        }
-    }
 }
 </script>
 
