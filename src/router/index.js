@@ -12,7 +12,7 @@ const routes = [
         component: Home
     },
     {
-        path: '/tranding-view',
+        path: '/trading-view',
         component: TradingView,
     }
 ];
