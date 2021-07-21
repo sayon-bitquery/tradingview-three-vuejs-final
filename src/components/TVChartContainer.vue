@@ -90,37 +90,7 @@ export default {
 
         this.tvWidget = new TradingView.widget(widgetOptions)
     },
-    destroyed() {
-        if (this.tvWidget !== null) {
-            this.tvWidget.remove()
-            this.tvWidget = null
-        }
-    },
-    created() {
-        this.getAllAddress();
-        if (this.$route.query.hasOwnProperty('type')) {
-            this.baseCurrency = this.$route.query.type;
-        }
-    },
     methods: {
-        changeAddress(address) {
-            this.baseCurrency = address;
-            this.searchValue = "";
-
-            this.$router.push(`/tranding-view?type=${address}`);
-
-            window.location.reload();
-        },
-
-        search() {
-            let term = this.searchValue;
-            let search = new RegExp(term , 'i');
-
-            this.getSearchAddress = this.getAllAddressValue.filter(item => search.test(item.name));
-
-            this.showSearchChild = !!this.getSearchAddress.length;
-        },
-
         getCoinInfo() {
             const query = `
                         {
